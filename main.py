@@ -24,21 +24,11 @@ newSkill3 = LabelEncoder()
 app = Flask(__name__)
 #
 CORS(app)
-file_path = os.path.abspath("ModelPred.pkl")
-file_size = os.path.getsize(file_path)
-print(os.path.getsize("dataset.csv"))
-print(file_path)
-print(file_size)
-print(platform.python_version())
-print(pickle.format_version)
 
-try:
-    with open('ModelPred.pkl', 'rb') as file:
-        file_size = os.path.getsize('ModelPred.pkl')
-        print(f'The file size of ModelPred.pkl is {file_size} bytes')
-        model = joblib.load(file)
-except (pickle.UnpicklingError, EOFError, ImportError, IndexError) as e:
-    print("An error occurred while unpickling the file:", e)
+
+with open('FreelancePrediction.pkl', 'rb') as file:
+   model = joblib.load(file)
+
 
 
 df['location'] = newLocation.fit(df['location'])
