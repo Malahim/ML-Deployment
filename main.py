@@ -21,7 +21,7 @@ app = Flask(__name__)
 #
 CORS(app)
 
-with open('Model.pkl', 'rb') as file:
+with open('Model_predict.pkl', 'rb') as file:
  model = pickle.Unpickler(file).load()
 df['location'] = newLocation.fit(df['location'])
 df['Skill_info_1'] = newSkill1.fit(df['Skill_info_1'])
