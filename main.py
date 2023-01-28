@@ -24,13 +24,8 @@ newSkill3 = LabelEncoder()
 app = Flask(__name__)
 #
 CORS(app)
-file_path = os.path.abspath("ModelPred.pkl")
-file_size = os.path.getsize(file_path)
-print(os.path.getsize("dataset.csv"))
-print(file_path)
-print(file_size)
-print(platform.python_version())
-print(pickle.format_version)
+
+
 
 try:
     with open('ModelPred.pkl', 'rb') as file:
