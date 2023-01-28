@@ -1,0 +1,11 @@
+{
+    "setup": {
+        "python38, gcc": {
+            "install": "python -m venv /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt",
+            "start": "gunicorn main:app"
+        }
+    },
+    "commands": {
+        "pull_model": "git lfs pull --include 'ModelPred.pkl'"
+    }
+}
