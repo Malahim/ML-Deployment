@@ -1,4 +1,2 @@
 * text=auto
-*.pkl filter=lfs diff=lfs merge=lfs -text
-*.PKL filter=lfs diff=lfs merge=lfs -text
-Model_predict.pkl filter=lfs diff=lfs merge=lfs -text
+
