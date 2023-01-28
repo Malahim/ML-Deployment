@@ -26,7 +26,7 @@ CORS(app)
 
 try:
     with open('Model_predict.pkl', 'rb') as file:
-        model = pickle.load(file,protocol=pickle.HIGHEST_PROTOCOL)
+        model = dill.load(file)
 except (pickle.UnpicklingError, EOFError, ImportError, IndexError) as e:
     print("An error occurred while unpickling the file:", e)
 
