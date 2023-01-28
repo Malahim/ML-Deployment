@@ -23,7 +23,7 @@ app = Flask(__name__)
 CORS(app)
 
 with open('Model.pkl', 'rb') as file:
- model = dill.load(file)
+ model = pickle.load(file)
 df['location'] = newLocation.fit(df['location'])
 df['Skill_info_1'] = newSkill1.fit(df['Skill_info_1'])
 df['Skill_info_2'] = newSkill2.fit(df['Skill_info_2'])
