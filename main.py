@@ -10,6 +10,8 @@ import pickle
 import dill
 import pandas as pd
 from flask_cors import CORS
+import platform
+import os
 
 df = pd.read_csv('dataset.csv', encoding='latin1')
 
@@ -22,7 +24,8 @@ app = Flask(__name__)
 #
 CORS(app)
 
-import platform
+file_size = os.path.getsize("/content/drive/MyDrive/Model.pkl")/(1024*1024)
+print(file_size)
 print(platform.python_version())
 print(pickle.format_version)
 
