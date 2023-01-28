@@ -6,8 +6,7 @@ import json
 from flask import Flask, request, jsonify
 from flask_restful import Resource, Api
 from sklearn.preprocessing import LabelEncoder
-import pickle
-import dill
+import joblib
 import pandas as pd
 from flask_cors import CORS
 import platform
@@ -21,10 +20,6 @@ newSkill2 = LabelEncoder()
 newSkill3 = LabelEncoder()
 
 
-def download_file():
-    subprocess.call(["git", "lfs", "install"])
-
-download_file()
 
 app = Flask(__name__)
 #
@@ -40,10 +35,8 @@ print(pickle.format_version)
 try:
     with open('ModelPred.pkl', 'rb') as file:
         file_size = os.path.getsize('ModelPred.pkl')
-        print(f'The file size of ModelPred.pkl is {file_size} bytessdsds')
-        data=file.read()
-        print(data)
-        model = pickle.loads(data)
+        print(f'The file size of ModelPred.pkl is {file_size} bytes')
+        model = joblib.load(file)
 except (pickle.UnpicklingError, EOFError, ImportError, IndexError) as e:
     print("An error occurred while unpickling the file:", e)
 
