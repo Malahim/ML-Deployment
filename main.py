@@ -22,7 +22,7 @@ newSkill3 = LabelEncoder()
 
 
 def download_file():
-    subprocess.call(["git", "lfs", "pull"])
+    subprocess.call(["git", "lfs", "install"])
 
 download_file()
 
