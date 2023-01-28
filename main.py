@@ -23,9 +23,13 @@ app = Flask(__name__)
 CORS(app)
 
 
-with open('Model_predict.pkl', 'rb') as file:
- print(file)
-#  model = pickle.Unpickler(file).load()
+
+try:
+    with open('Model_predict.pkl', 'rb') as file:
+        data = pickle.load(file)
+except (pickle.UnpicklingError, EOFError, ImportError, IndexError) as e:
+    print("An error occurred while unpickling the file:", e)
+
 
 df['location'] = newLocation.fit(df['location'])
 df['Skill_info_1'] = newSkill1.fit(df['Skill_info_1'])
