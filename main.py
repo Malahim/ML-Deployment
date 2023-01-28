@@ -22,6 +22,8 @@ app = Flask(__name__)
 #
 CORS(app)
 
+import platform
+print(platform.python_version())
 print(pickle.format_version)
 
 try:
