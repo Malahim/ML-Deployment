@@ -23,7 +23,7 @@ newSkill3 = LabelEncoder()
 app = Flask(__name__)
 #
 CORS(app)
-file_path = os.path.abspath("Model_predict.pkl")
+file_path = os.path.abspath("ModelPred.pkl")
 file_size = os.path.getsize(file_path)
 print(os.path.getsize("dataset.csv"))
 print(file_path)
