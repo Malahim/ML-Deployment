@@ -22,7 +22,7 @@ app = Flask(__name__)
 #
 CORS(app)
 
-with open('Model.pkl', 'rb') as file:
+with open('https://drive.google.com/file/d/1vBk_Qu3eZJJb3xCs1O28iJt6ukj_S0mO/view?usp=share_link', 'rb') as file:
  print(pickle.Unpickler(file).load())
 df['location'] = newLocation.fit(df['location'])
 df['Skill_info_1'] = newSkill1.fit(df['Skill_info_1'])
