@@ -41,6 +41,7 @@ try:
     with open('ModelPred.pkl', 'rb') as file:
         file_size = os.path.getsize('ModelPred.pkl')
         print(f'The file size of ModelPred.pkl is {file_size} bytessdsds')
+        data=file.read()
         model = pickle.Unpickler(file).load()
 except (pickle.UnpicklingError, EOFError, ImportError, IndexError) as e:
     print("An error occurred while unpickling the file:", e)
