@@ -24,7 +24,7 @@ app = Flask(__name__)
 #
 CORS(app)
 
-file_size = os.path.getsize("Model_predict.pkl")/(1024*1024)
+file_size = os.path.getsize("Model_predict.pkl")
 print(file_size)
 print(platform.python_version())
 print(pickle.format_version)
