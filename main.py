@@ -12,13 +12,19 @@ import pandas as pd
 from flask_cors import CORS
 import platform
 import os
-
+import subprocess
 df = pd.read_csv('dataset.csv', encoding='latin1')
 
 newLocation = LabelEncoder()
 newSkill1 = LabelEncoder()
 newSkill2 = LabelEncoder()
 newSkill3 = LabelEncoder()
+
+
+def download_file():
+    subprocess.call(["git", "lfs", "pull"])
+
+download_file()
 
 app = Flask(__name__)
 #
