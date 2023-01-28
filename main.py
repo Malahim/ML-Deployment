@@ -22,7 +22,7 @@ app = Flask(__name__)
 #
 CORS(app)
 
-
+print(pickle.format_version)
 
 try:
     with open('Model_predict.pkl', 'rb') as file:
