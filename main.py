@@ -7,6 +7,7 @@ from flask import Flask, request, jsonify
 from flask_restful import Resource, Api
 from sklearn.preprocessing import LabelEncoder
 import pickle
+import dill
 import pandas as pd
 from flask_cors import CORS
 
@@ -21,8 +22,10 @@ app = Flask(__name__)
 #
 CORS(app)
 
+
 with open('Model_predict.pkl', 'rb') as file:
  model = pickle.Unpickler(file).load()
+
 df['location'] = newLocation.fit(df['location'])
 df['Skill_info_1'] = newSkill1.fit(df['Skill_info_1'])
 df['Skill_info_2'] = newSkill2.fit(df['Skill_info_2'])
