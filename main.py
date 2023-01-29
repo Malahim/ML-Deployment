@@ -26,8 +26,11 @@ app = Flask(__name__)
 CORS(app)
 
 
-# with open('Predict.pkl', 'rb') as file:
-#    model = joblib.load(file)
+try:
+    with open('Predict.pkl', 'rb') as file:
+        model = joblib.load(file)
+except Exception as e:
+    print("An error occurred while loading the pickle file: ", e)
 
 
 
