@@ -67,10 +67,15 @@ class prediction(Resource):
             response = {"Details are not enough"}
 
         return arr_list[0]
+   
+class indexRouter(Resource):
+   def index():
+      return jsonify({"Freelance Hourly price prediction": "Welcome to your Flask app 🚅"})
+
 
 
 api.add_resource(prediction, '/prediction')
-
+api.add_resource(indexRouter, '/')
 if __name__ == '_main_':
     app.run(debug=True,port=os.getenv("PORT", default=5000))
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
