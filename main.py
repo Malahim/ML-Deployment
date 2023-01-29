@@ -72,5 +72,5 @@ class prediction(Resource):
 api.add_resource(prediction, '/prediction')
 
 if __name__ == '_main_':
-    app.run(debug=True)
+    app.run(debug=True,port=os.getenv("PORT", default=5000))
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
