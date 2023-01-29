@@ -26,8 +26,8 @@ app = Flask(__name__)
 CORS(app)
 
 
-with open('Predict.pkl', 'rb') as file:
-   model = joblib.load(file)
+# with open('Predict.pkl', 'rb') as file:
+#    model = joblib.load(file)
 
 
 
