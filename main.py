@@ -18,7 +18,7 @@ newLocation = LabelEncoder()
 newSkill1 = LabelEncoder()
 newSkill2 = LabelEncoder()
 newSkill3 = LabelEncoder()
-os.path.getsize("Predict.pkl")/(1024*1024) 
+print(os.path.getsize("Predict.pkl")/(1024*1024) )
 
 
 app = Flask(__name__)
@@ -29,6 +29,7 @@ CORS(app)
 try:
     with open('Predict.pkl', 'rb') as file:
         model = joblib.load(file)
+        print(model.predict([[50,4,150,444,2,333]]))
 except Exception as e:
     print("An error occurred while loading the pickle file: ", e)
 
