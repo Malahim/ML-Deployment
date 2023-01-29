@@ -18,7 +18,7 @@ newLocation = LabelEncoder()
 newSkill1 = LabelEncoder()
 newSkill2 = LabelEncoder()
 newSkill3 = LabelEncoder()
-
+os.path.getsize("Predict.pkl")/(1024*1024) 
 
 
 app = Flask(__name__)
